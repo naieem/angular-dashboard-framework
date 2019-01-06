@@ -13,22 +13,22 @@ export class AppComponent {
   expandHeight = '42px';
   collapseHeight = '42px';
   displayMode = 'flat';
-  themes = [{
-    name: 'Gray',
-    value: 'gray'
-  },
-  {
-    name: 'Purple',
-    value: 'purple'
-  },
-  {
-    name: 'Pink',
-    value: 'pink'
-  },
-  {
-    name: 'Indigo',
-    value: 'indigo'
-  }];
+  // themes = [{
+  //   name: 'Gray',
+  //   value: 'gray'
+  // },
+  // {
+  //   name: 'Purple',
+  //   value: 'purple'
+  // },
+  // {
+  //   name: 'Pink',
+  //   value: 'pink'
+  // },
+  // {
+  //   name: 'Indigo',
+  //   value: 'indigo'
+  // }];
   currentTheme = 'gray';
   // overlap = false;
 
@@ -45,10 +45,10 @@ export class AppComponent {
     });
 
   }
-  ToggleSidebar(sidenav) {
-    sidenav.toggle();
-  }
-  ChangeTheme(theme) {
-    this.currentTheme = theme;
-  }
+  // ToggleSidebar(sidenav) {
+  //   sidenav.toggle();
+  // }
+  // ChangeTheme(theme) {
+  //   this.currentTheme = theme;
+  // }
 }

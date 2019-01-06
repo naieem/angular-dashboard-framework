@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 // @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
-$profile_background_color:#B2F34F;
+
 body{
     padding: 0;
     margin:0
@@ -62,13 +62,4 @@ body{
   }
   .sidenav-container{
     background-color: #71A81C !important;
-    .profile_image_container{
-      background-color:$profile_background_color !important;
-    }
-    .profile_information_container{
-      background-color: $profile_background_color !important;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      font-weight: bold;
-    }
   }

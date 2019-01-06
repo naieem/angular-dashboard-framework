@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatCheckboxModule,
   MatIconModule, MatMenuModule, MatSidenavModule,
-  MatExpansionModule, MatListModule,MatToolbarModule,MatCardModule } from '@angular/material';
+  MatExpansionModule,MatToolbarModule,MatCardModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import SidebarModule from './sidebar/sidebar.module';
+import ToolbarModule from './toolbar/toolbar.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
@@ -23,13 +24,13 @@ import { AppComponent } from './app.component';
     MatSidenavModule,
     FlexLayoutModule,
     MatExpansionModule,
-    MatListModule,
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    SidebarModule
+    SidebarModule,
+    ToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
