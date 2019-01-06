@@ -6,11 +6,12 @@ import { MatButtonModule, MatCheckboxModule,
   MatExpansionModule, MatListModule,MatToolbarModule,MatCardModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import SidebarModule from './sidebar/sidebar.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,7 +28,8 @@ import { AppComponent } from './app.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    SidebarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

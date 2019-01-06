@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  opened = false;
+  opened = true;
   over = 'side';
   expandHeight = '42px';
   collapseHeight = '42px';
