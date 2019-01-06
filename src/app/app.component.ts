@@ -29,7 +29,7 @@ export class AppComponent {
   //   name: 'Indigo',
   //   value: 'indigo'
   // }];
-  currentTheme = 'gray';
+  currentTheme = 'pink';
   // overlap = false;
 
   watcher: Subscription;
