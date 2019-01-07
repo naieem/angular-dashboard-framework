@@ -10,6 +10,18 @@ import SidebarModule from './packages/sidebar/sidebar.module';
 import ToolbarModule from './packages/toolbar/toolbar.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import * as firebase from 'firebase';
+
+var config = {
+  apiKey: "AIzaSyDGTLXyAMD-E-EEx064vpGD5KFmilLe5yc",
+  authDomain: "ionic2-test-cb300.firebaseapp.com",
+  databaseURL: "https://ionic2-test-cb300.firebaseio.com",
+  projectId: "ionic2-test-cb300",
+  storageBucket: "ionic2-test-cb300.appspot.com",
+  messagingSenderId: "888777950862"
+};
+firebase.initializeApp(config);
+
 @NgModule({
   declarations: [
     AppComponent,

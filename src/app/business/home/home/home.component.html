@@ -1,0 +1,15 @@
+<div fxLayout="row wrap" fxLayoutGap="25px" fxLayoutAlign="center start" fxLayout.xs="column">
+    <div *ngFor="let item of items" fxFlex=30 fxFlex.xs=1>
+        <mat-card style="margin-bottom: 20px">
+            <mat-card-header>
+                <mat-card-title>{{item.title}}</mat-card-title>
+            </mat-card-header>
+            <img mat-card-image src="{{item.picture}}" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    {{item.about}}
+                </p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

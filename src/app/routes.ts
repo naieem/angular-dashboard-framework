@@ -17,17 +17,20 @@ const SiteRoute = [
         }
     }, {
         path: '',
-        redirectTo: '/about',
-        pathMatch: 'full',
+        loadChildren:'./business/home/home.module#HomeModule',
+        data: {
+            MenuShow: false
+        }
+    },
+    {
+        path: '404',
+        loadChildren:'./packages/page-not-found/page-not-found.module#PageNotFoundModule',
         data: {
             MenuShow: false
         }
     }, {
         path: '**',
-        loadChildren: './packages/page-not-found/page-not-found.module#PageNotFoundModule',
-        data: {
-            MenuShow: false
-        }
+        redirectTo:'/404',
     }
 ];
 export {SiteRoute};
