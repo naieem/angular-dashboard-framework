@@ -13,25 +13,7 @@ export class AppComponent {
   expandHeight = '42px';
   collapseHeight = '42px';
   displayMode = 'flat';
-  // themes = [{
-  //   name: 'Gray',
-  //   value: 'gray'
-  // },
-  // {
-  //   name: 'Purple',
-  //   value: 'purple'
-  // },
-  // {
-  //   name: 'Pink',
-  //   value: 'pink'
-  // },
-  // {
-  //   name: 'Indigo',
-  //   value: 'indigo'
-  // }];
   currentTheme = 'pink';
-  // overlap = false;
-
   watcher: Subscription;
 
   constructor(media: ObservableMedia) {
@@ -45,10 +27,4 @@ export class AppComponent {
     });
 
   }
-  // ToggleSidebar(sidenav) {
-  //   sidenav.toggle();
-  // }
-  // ChangeTheme(theme) {
-  //   this.currentTheme = theme;
-  // }
 }
