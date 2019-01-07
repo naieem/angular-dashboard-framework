@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {CoreModule} from '../core/core.module';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -10,7 +11,7 @@ import {
   MatExpansionModule,
   MatListModule,
   MatToolbarModule,
-  MatCardModule
+  MatCardModule,
 } from '@angular/material';
 import {SidebarComponent} from './sidebar/sidebar.component';
 
@@ -27,8 +28,9 @@ import {SidebarComponent} from './sidebar/sidebar.component';
     FlexLayoutModule,
     MatExpansionModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    CoreModule
   ],
-  exports:[SidebarComponent]
+  exports: [SidebarComponent]
 })
 export default class SidebarModule {}

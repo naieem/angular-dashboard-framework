@@ -9,7 +9,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import SidebarModule from './packages/sidebar/sidebar.module';
 import ToolbarModule from './packages/toolbar/toolbar.module';
 import { AppComponent } from './app.component';
-
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +30,8 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     FlexLayoutModule,
     SidebarModule,
-    ToolbarModule
+    ToolbarModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
