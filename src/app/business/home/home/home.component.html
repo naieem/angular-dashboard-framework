@@ -10,6 +10,10 @@
                     {{item.about}}
                 </p>
             </mat-card-content>
+            <mat-card-actions fxLayoutAlign="end start">
+                <!-- <button mat-raised-button color="warn" [routerLink]="['/item', item._id]" >Details</button> -->
+                <button mat-raised-button color="warn" (click)="gotoItemDetails(item._id)">Details</button>
+            </mat-card-actions>
         </mat-card>
     </div>
 </div>
