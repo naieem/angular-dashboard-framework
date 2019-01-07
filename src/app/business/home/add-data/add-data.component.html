@@ -1,0 +1,30 @@
+<div fxLayoutAlign="center center">
+    <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" fxLayout="column" fxFlex='33' fxFlex.xs='100'>
+        <h2>Add</h2>
+        <mat-form-field>
+            <input matInput placeholder="First Name:" formControlName="firstName" value="">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Last Name:" formControlName="lastName" value="">
+        </mat-form-field>
+
+        <div formGroupName="address" fxLayout="column">
+            <h3>Address</h3>
+            <mat-form-field>
+                <input matInput placeholder="Street:" formControlName="street" value="">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="City:" formControlName="city" value="">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="State:" formControlName="state" value="">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Zip:" formControlName="zip" value="">
+            </mat-form-field>
+        </div>
+
+        <button mat-raised-button [disabled]="!profileForm.valid">Submit</button>
+    </form>
+</div>

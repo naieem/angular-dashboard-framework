@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatCheckboxModule,
   MatIconModule, MatMenuModule, MatSidenavModule,
   MatExpansionModule,MatToolbarModule,MatCardModule } from '@angular/material';
@@ -37,8 +36,6 @@ firebase.initializeApp(config);
     FlexLayoutModule,
     MatExpansionModule,
     MatCardModule,
-    FormsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
     SidebarModule,
