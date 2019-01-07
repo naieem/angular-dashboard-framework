@@ -6,11 +6,12 @@ import { CoreService } from '../../core/core.service';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-
+  private navigations:any[];
   constructor(private coreService: CoreService) { }
 
   ngOnInit() {
-    console.log(this.coreService.getRouteConfig());
+    // console.log(this.coreService.getVisibleRoutes());
+    this.navigations = this.coreService.getVisibleRoutes();
   }
 
 }

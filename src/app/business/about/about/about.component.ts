@@ -14,7 +14,7 @@ export class AboutComponent implements OnInit {
     this.activeRoute.data.subscribe((data:any)=>{
       console.log(data);
     });
-    console.log(this.activeRoute.data);
+    // console.log(this.activeRoute.data);
   }
 
 }
