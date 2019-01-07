@@ -6,8 +6,8 @@ import { MatButtonModule, MatCheckboxModule,
   MatExpansionModule,MatToolbarModule,MatCardModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import SidebarModule from './sidebar/sidebar.module';
-import ToolbarModule from './toolbar/toolbar.module';
+import SidebarModule from './packages/sidebar/sidebar.module';
+import ToolbarModule from './packages/toolbar/toolbar.module';
 import { AppComponent } from './app.component';
 
 @NgModule({
