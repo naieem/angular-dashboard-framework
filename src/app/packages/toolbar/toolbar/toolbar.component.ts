@@ -1,5 +1,5 @@
 import { Component, OnInit,Input } from '@angular/core';
-
+import { CoreService } from '../../core';
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
@@ -23,8 +23,8 @@ export class ToolbarComponent implements OnInit {
     name: 'Indigo',
     value: 'indigo'
   }];
-  currentTheme = 'gray';
-  constructor() { }
+  currentTheme = 'pink';
+  constructor(private coreService:CoreService) { }
 
   ngOnInit() {
   }
@@ -33,6 +33,7 @@ export class ToolbarComponent implements OnInit {
   }
   ChangeTheme(theme) {
       this.currentTheme = theme;
+      this.coreService.changeTheme.emit(theme);
     }
 
 }

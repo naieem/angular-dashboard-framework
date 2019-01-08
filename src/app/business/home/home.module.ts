@@ -6,6 +6,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {RouterModule, Routes} from '@angular/router';
 import {MatCardModule} from '@angular/material/card';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
 import {ItemDetailsComponent} from './item-details/item-details.component';
 import {HomeComponent} from './home/home.component';
 import { AddDataComponent } from './add-data/add-data.component';
@@ -34,7 +36,9 @@ const routes : Routes = [
     MatButtonModule,
     ReactiveFormsModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatMomentDateModule
   ]
 })
 export class HomeModule {}

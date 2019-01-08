@@ -2,7 +2,7 @@
     <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" fxLayout="column" fxFlex='33' fxFlex.xs='100'>
         <h2>Add</h2>
         <mat-form-field>
-            <input matInput placeholder="First Name:" formControlName="firstName" value="">
+            <input matInput color="warn" placeholder="First Name:" formControlName="firstName" value="">
         </mat-form-field>
 
         <mat-form-field>
@@ -23,8 +23,13 @@
             <mat-form-field>
                 <input matInput placeholder="Zip:" formControlName="zip" value="">
             </mat-form-field>
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
         </div>
 
-        <button mat-raised-button [disabled]="!profileForm.valid">Submit</button>
+        <button mat-raised-button [disabled]="!profileForm.valid" color="warn">Submit</button>
     </form>
 </div>

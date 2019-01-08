@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ObservableMedia, MediaChange } from '@angular/flex-layout';
 import { Subscription } from 'rxjs';
+import { CoreService } from './packages/core';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +17,7 @@ export class AppComponent {
   currentTheme = 'pink';
   watcher: Subscription;
 
-  constructor(media: ObservableMedia) {
+  constructor(media: ObservableMedia,private coreService:CoreService) {
     this.watcher = media.subscribe((change: MediaChange) => {
       if (change.mqAlias === 'sm' || change.mqAlias === 'xs') {
         this.opened = false;
@@ -25,6 +26,8 @@ export class AppComponent {
         this.over='side';
       }
     });
-
+    this.coreService.changeTheme.subscribe((themeName)=>{
+      this.currentTheme = themeName;
+    });
   }
 }
