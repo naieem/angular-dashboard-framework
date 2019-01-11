@@ -1,15 +1,15 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from '@angular/forms';
-import {Validators} from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Validators } from '@angular/forms';
 import * as firebase from 'firebase';
 export interface PeriodicElement {
-  name : string;
-  position : number;
-  weight : number;
-  symbol : string;
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
 }
 
-const ELEMENT_DATA : PeriodicElement[] = [
+const ELEMENT_DATA: PeriodicElement[] = [
   {
     position: 1,
     name: 'Hydrogen',
@@ -62,15 +62,18 @@ const ELEMENT_DATA : PeriodicElement[] = [
     symbol: 'Ne'
   }
 ];
-@Component({selector: 'app-add-data', templateUrl: './add-data.component.html', styleUrls: ['./add-data.component.scss']})
+@Component({ selector: 'app-add-data', templateUrl: './add-data.component.html', styleUrls: ['./add-data.component.scss'] })
 
 export class AddDataComponent implements OnInit {
-  profileForm : any;
+  profileForm: any;
   database = firebase.firestore();
-  displayedColumns : string[] = ['firstName', 'lastName'];
+  storageRef = firebase.storage().ref();
+  displayedColumns: string[] = ['firstName', 'lastName'];
   dataSource = ELEMENT_DATA;
   data = [];
-  constructor(private fb : FormBuilder) {
+  fileTobeUploaded: any;
+  uploadedImageUrl: string;
+  constructor(private fb: FormBuilder) {
     this.profileForm = this
       .fb
       .group({
@@ -80,33 +83,41 @@ export class AddDataComponent implements OnInit {
         lastName: [''],
         address: this
           .fb
-          .group({street: [''], city: [''], state: [''], zip: [''], dob: ['']})
+          .group({ street: [''], city: [''], state: [''], zip: [''], dob: [''] })
       });
   }
 
   ngOnInit() {
-    // this   .database   .collection("items")   .get()   .then((result) => {
-    // result.forEach((data) => {       // console.log(data.id + ' = ');       //
-    // console.log(data.data());       let info = data.data();       info.id =
-    // data.id;       this.data.push(info);       console.log(info);     });
-    // console.log(this.data);   })   .catch((error) => {     console.log(error);
-    // });
-    this
-      .database
-      .collection('items')
-      .onSnapshot((info) => {
-        this.data=[];
+    const query = this.database.collection("items").where('address.zip', '==', 'kutkut');
+    query.get().then((result) => {
+      debugger;
+      result.forEach((data) => {
+        console.log(data.data());
+        let info = data.data();
+        info.id = data.id;
+        this.data.push(info);
         console.log(info);
-        info.forEach((doc)=> {
-          let info = doc.data();
-          info.id = doc.id;
-          this
-            .data
-            .push(info);
-          console.log(info);
-        });
-
       });
+      console.log(this.data);
+    }).catch((error) => {
+      console.log(error);
+    });
+    // this
+    //   .database
+    //   .collection('items')
+    //   .onSnapshot((info) => {
+    //     this.data = [];
+    //     console.log(info);
+    //     info.forEach((doc) => {
+    //       let info = doc.data();
+    //       info.id = doc.id;
+    //       this
+    //         .data
+    //         .push(info);
+    //       console.log(info);
+    //     });
+
+    //   });
   }
   onSubmit() {
     // console.log(this.profileForm.get('address').value['dob']);
@@ -127,5 +138,24 @@ export class AddDataComponent implements OnInit {
         console.warn('Error found ', error);
       });
     // console.warn(this.profileForm.value);
+  }
+  handleFileInput(files: FileList) {
+    debugger;
+    this.fileTobeUploaded = files.item(0);
+    const name = (+new Date()) + '-' + this.fileTobeUploaded.name;
+    const metadata = {
+      contentType: this.fileTobeUploaded.type
+    };
+    const fileRef = this.storageRef.child(name);
+    fileRef.put(this.fileTobeUploaded, metadata).then((snapshot) => {
+      debugger;
+      console.log('Uploaded a blob or file!');
+      fileRef.getDownloadURL().then((url) => {
+        console.log(url);
+        this.uploadedImageUrl = url;
+      }).catch((error) => {
+        console.log(error);
+      });
+    });
   }
 }
