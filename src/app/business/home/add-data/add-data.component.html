@@ -30,7 +30,8 @@
         </table>
     </div>
     <div fxLayout="row" fxLayoutAlign="center start">
-        <div fxFlex='33' fxFlex.xs='100'>
+        <div fxFlex='50' fxFlex.xs='100'>
+            <img src="{{uploadedImageUrl}}" *ngIf="uploadedImageUrl" />
             <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
                 <h2>Add</h2>
                 <div fxLayoutAlign="space-between start">
@@ -62,6 +63,10 @@
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker></mat-datepicker>
                     </mat-form-field>
+                    <!-- <mat-form-field> -->
+                        <mat-label>File Upload</mat-label>
+                        <input type="file" id="file" (change)="handleFileInput($event.target.files)">
+                    <!-- </mat-form-field> -->
                 </div>
 
                 <button mat-raised-button [disabled]="!profileForm.valid" color="warn">Submit</button>
