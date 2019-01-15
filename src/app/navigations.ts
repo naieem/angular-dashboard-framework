@@ -30,6 +30,12 @@ const navigations = [
                 path:'/contact'
             }
         ]
+    },
+    {
+        id:'Home',
+        title:'List',
+        IsVisible:true,
+        path:'/list',
     }
 ];
 export default navigations;
